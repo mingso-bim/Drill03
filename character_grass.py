@@ -74,3 +74,4 @@ while True:
     run_triangle()   
 
 close_canvas()
+
