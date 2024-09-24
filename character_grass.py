@@ -6,6 +6,11 @@ open_canvas()
 grass = load_image('grass.png')
 boy = load_image('character.png')
 
+def draw_boy(x, y):
+    clear_canvas_now()
+    boy.draw_now(x,y)
+    delay(0.1)
+    
 def run_circle():
     print('circle')
 
@@ -14,33 +19,32 @@ def run_circle():
         theta = math.radians(degree)
         x = r * math.cos(theta) + cx
         y = r * math.sin(theta) + cy
-    
-        clear_canvas_now()
-        boy.draw_now(x,y)
-        delay(0.1)
+        draw_boy(x, y)
 
 def run_top():
     print('top')
-    pass
-
-def run_left():
-    print('left')
-    pass
-
-def run_bottom():
-    print('bottom')
+    for x in range(0, 800, 100):
+        draw_boy(x, 550)
     pass
 
 def run_right():
     print('right')
     pass
 
+def run_bottom():
+    print('bottom')
+    pass
+
+def run_left():
+    print('left')
+    pass
+
 def run_rectangle():
     print('rectangle')
     run_top()
-    run_left()
-    run_bottom()
     run_right()
+    run_bottom()
+    run_left()
 
 
 
